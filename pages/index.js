@@ -13,18 +13,7 @@ import React from 'react'
 //Object.freeze(query);
 
 
-console.log(query);
-console.log("1");
-console.log(query);
 
-
-function pausecomp(millis)
-{
-    var date = new Date();
-    var curDate = null;
-    do { curDate = new Date(); }
-    while(curDate-date < millis);
-}
 
 const styles={
   Home: {
@@ -39,54 +28,41 @@ const styles={
 
   //bod.innerHTML=render(){return({container} {containercontainer})};
 
-  var container;
-  var containercontainer;
-class PutTogetherErer extends React.Component{
-  static async getJSON(){
+
+  async function getJSON(){
     var querty;
     await fetch("http://127.0.0.1:5000")
       .then(res=>res.json())
       .then(data=>querty=data)
       .then(()=>console.log(querty[0]));
-    console.log(querty);
-    container=ButtonContainer(querty);
-    containercontainer=ButtonContainerContainer(querty);
-    document.body.replaceWith(PutTogetherErer.render());
-    console.log(container);
     return querty;
 }
-render (){
-  return (
-    <body style={styles.Home} id='bod'>
-    {container}
-    {containercontainer}
-    </body>
-  )
-}
-}
+
+
 const temp=[{
 	course_id:1,
 	course_name:"temp",
 	course_type:1
 }];
 
+var container;
+var containercontainer;
+export default async function Home() {
 
-export default function Home() {
-
-  var json=PutTogetherErer.getJSON("http://127.0.0.1:5000");
+  var json=  await getJSON();
   console.log(json);
 
 
 //  json.then(
     console.log(json.result);
-    container=ButtonContainer(temp);
-    containercontainer=ButtonContainerContainer(temp);
+    container=ButtonContainer(json);
+    containercontainer=ButtonContainerContainer(json);
   //  )
     return (
       <body style={styles.Home} id='bod'>
-      <Welcome/>
-      {container}
-      {containercontainer}
+        <Welcome/>
+        {container}
+        {containercontainer}
 
       </body>
     )

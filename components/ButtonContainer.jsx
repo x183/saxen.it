@@ -9,7 +9,7 @@ const styles={
 		backgroundColor:'white'
 	}
 }
-const superCats=["Matte","Programmering","Annat"];
+var superCats=["Matte","Programmering","Annat"];
 
 export default function ButtonContainer(jso){
 	const elements=[];
