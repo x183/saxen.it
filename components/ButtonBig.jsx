@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const styles={
 	buttonBig: {
 		backgroundColor:'darkblue',
@@ -7,7 +9,14 @@ const styles={
 	}
 }
 
-export default function ButtonBig(text,id){
+export default function ButtonBig({text,id}){
 	return (
-		<button  style={styles.buttonBig}id={id}>{text}</button>	)
+		<Link href={`/${text}`}>
+		<button  style={styles.buttonBig}id={id}>{text}</button>
+		</Link>
+	)
 }
+
+
+
+//onClick={() => buttonFun(text)}

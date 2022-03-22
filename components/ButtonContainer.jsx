@@ -15,7 +15,8 @@ export default function ButtonContainer(jso){
 	const elements=[];
 	var i=0;
 	for(i=0;i<superCats.length;i++){
-		elements[i]=ButtonBig(superCats[i],i);
+		var cat=superCats[i];
+		elements[i]=ButtonBig({text:cat,id:i});
 	}
 	return (
 		<div className='d-flex flex-row'style={styles.containerFlex}>

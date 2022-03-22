@@ -5,7 +5,7 @@ import ButtonContainer from '../components/ButtonContainer'
 import ButtonContainerSmol from '../components/ButtonContainerSmol'
 import PdfPanel from '../components/PdfPanel'
 import ButtonContainerContainer from '../components/ButtonContainerContainer'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
@@ -32,7 +32,7 @@ const styles={
   export async function getServerSideProps(){
     const response = await fetch(process.env.SERVER);
     const data = await response.json();
-    //console.log(data);
+    console.log(data);
     return { props: { data } };
 }
 
