@@ -10,7 +10,6 @@ const styles={
 		backgroundColor:'white'
 	}
 }
-
 export default function ButtonContainerContainer(json){
 	const smolcontainer=ButtonContainerSmol(json,0);
 	return (

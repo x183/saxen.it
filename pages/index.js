@@ -6,7 +6,7 @@ import ButtonContainerSmol from '../components/ButtonContainerSmol'
 import PdfPanel from '../components/PdfPanel'
 import ButtonContainerContainer from '../components/ButtonContainerContainer'
 import query from '../components/globals'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 //query=fetch("http://127.0.0.1:5000").then(async r=>console.log(await r.text()));
@@ -47,11 +47,14 @@ const temp=[{
 
 var container;
 var containercontainer;
-export default async function Home() {
+export default function Home() {
+  const [json, setJson] = useState("Fuck off");
 
-  var json=  await getJSON();
-  console.log(json);
+  useEffect(async () => {
+    let js = await getJSON();
 
+    setJson(js);
+  }, []);
 
 //  json.then(
     console.log(json.result);
