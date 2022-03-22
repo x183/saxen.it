@@ -10,8 +10,8 @@ const styles={
 		backgroundColor:'white'
 	}
 }
-export default function ButtonContainerContainer(json){
-	const smolcontainer=ButtonContainerSmol(json,0);
+export default function ButtonContainerContainer(json,type){
+	const smolcontainer=ButtonContainerSmol(json,type);
 	return (
 		<div style={styles.containerFlex}>
 			{smolcontainer}

@@ -15,8 +15,10 @@ const styles={
 
 export default function ButtonContainerSmol(json,type){
 	const elementList=[];
-	for(var i=0;i<1;i++){
-		elementList[i]=ButtonBig(json[0]["course_name"],i);
+	for(var i=0;i<json.length;i++){
+		if(json[i]["course_type"]==type){
+		elementList[i]=ButtonBig(json[i]["course_name"],i);
+		}
 	}
 	return (
 		<div style={styles.containerSmolFlex}>

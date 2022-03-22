@@ -48,7 +48,7 @@ const temp=[{
 var container;
 var containercontainer;
 export default function Home() {
-  const [json, setJson] = useState("Fuck off");
+  const [json, setJson] = useState(temp);
 
   useEffect(async () => {
     let js = await getJSON();
@@ -59,7 +59,7 @@ export default function Home() {
 //  json.then(
     console.log(json.result);
     container=ButtonContainer(json);
-    containercontainer=ButtonContainerContainer(json);
+    containercontainer=ButtonContainerContainer(json,1);
   //  )
     return (
       <body style={styles.Home} id='bod'>
