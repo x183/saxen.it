@@ -1,7 +1,7 @@
 const styles={
 	buttonBig: {
-		backgroundColor:'darkblue',
-		color:'beige',
+		backgroundColor:'lightgray',
+		color:'black',
 		height:'100%',
 		width:'100%',
 	}

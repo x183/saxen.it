@@ -21,7 +21,12 @@ const styles={
     display:'flex',
     alignContent:'stretch',
     flexDirection:'column',
-    height:'95vh'
+    height:'100vh',
+    width:'100vw',
+    marginLeft:'0vw',
+    marginRight:'0vw',
+    marginTop:'0vh',
+    marginBottom:'0vh'
   }
 };
 
@@ -54,7 +59,7 @@ export default function Home({data}) {
   //  )
     return (
       <body style={styles.Home} id='bod'>
-        <Welcome/>
+
         {container}
         {containercontainer}
 

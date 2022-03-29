@@ -9,6 +9,7 @@ import React from 'react'
 
 
 
+
 //query=fetch("http://127.0.0.1:5000").then(async r=>console.log(await r.text()));
 //Object.freeze(query);
 
@@ -21,7 +22,15 @@ const styles={
     display:'flex',
     alignContent:'stretch',
     flexDirection:'column',
-    height:'95vh'
+    height:'100vh',
+    width:'100vw',
+    marginLeft:'0vw',
+    marginRight:'0vw',
+    marginTop:'0vh',
+    marginBottom:'0vh'
+
+
+
   }
 };
 
@@ -32,7 +41,7 @@ const styles={
   export async function getServerSideProps(){
     const response = await fetch(process.env.SERVER);
     const data = await response.json();
-    //console.log(data);
+    //console.log(data);Home
     return { props: { data } };
 }
 
@@ -43,9 +52,16 @@ const temp=[{
 	course_type:1
 }];
 
-var container;
-var containercontainer;
+let container;
+let containercontainer;
 export default function Home({data}) {
+
+  //react states och hooks
+  //const [courses, setCourses] = useState(data);
+
+  //setCourses(newData) // courses => newData
+
+
 
 //  json.then(
     //console.log(json.result);
@@ -54,7 +70,6 @@ export default function Home({data}) {
   //  )
     return (
       <body style={styles.Home} id='bod'>
-        <Welcome/>
         {container}
         {containercontainer}
 

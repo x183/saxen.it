@@ -1,26 +1,31 @@
 import ButtonContainerSmol from "./ButtonContainerSmol"
 import PdfPanel from "./PdfPanel"
+import { useState } from "react";
 
 const styles={
 	containerFlex:{
 		display:'flex',
-		flex:8,
+		flex:90,
 		flexDirection:'row',
 		alignContent:'stretch',
-		backgroundColor:'white'
+		backgroundColor:'beige'
 	}
 }
+
 export default function ButtonContainerContainer(json,type){
-	const smolcontainer=ButtonContainerSmol({json,type,fun:buttonFun});
+	const [pdf,setpdf]=useState("");
+
+	const panel=PdfPanel({path:pdf});
 	return (
 		<div style={styles.containerFlex}>
-			{smolcontainer}
-			<PdfPanel/>
+			<ButtonContainerSmol fun={setpdf} json={json} type={type}/>
+			<PdfPanel path={pdf}/>
 		</div>
 	)
 }
 
 function buttonFun(id){
 console.log(id);
-//replace pdf file here!
+setpdf(id+".pdf");
+
 }

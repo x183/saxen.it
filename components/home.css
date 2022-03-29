@@ -1,0 +1,15 @@
+.home {
+    background-color: darkcyan;
+    display:flex;
+    align-content:stretch;
+    flex-direction:column;
+    height:'100vh';
+    width:'100vw';
+    margin-left:'0vw';
+    margin-right:'0vw';
+    margin-top:'0vh';
+    margin-bottom:'0vh';
+
+
+
+  }

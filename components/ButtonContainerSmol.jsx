@@ -7,7 +7,8 @@ const styles={
 		flexDirection:'column',
 		flex:1.3,
 		alignContent:'stretch',
-		backgroundColor:'white'
+		backgroundColor:'beige',
+
 	}
 
 }

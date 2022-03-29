@@ -6,17 +6,17 @@ const styles={
 		flex:1,
 		flexDirection:'row',
 		alignContent:'stretch',
-		backgroundColor:'white'
+		backgroundColor:'beige'
 	}
 }
-var superCats=["Matte","Programmering","Annat"];
+var superCats=["MATTE","PROGRAMMERING","ANNAT"];
 
 export default function ButtonContainer(jso){
 	const elements=[];
 	var i=0;
 	for(i=0;i<superCats.length;i++){
 		var cat=superCats[i];
-		elements[i]=ButtonBig({text:cat,id:i});
+		elements[i]=ButtonBig({text:cat,id:i,amount:superCats.length});
 	}
 	return (
 		<div className='d-flex flex-row'style={styles.containerFlex}>

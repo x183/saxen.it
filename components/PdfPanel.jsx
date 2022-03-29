@@ -1,19 +1,18 @@
 const styles={
 	pdfStyle: {
-		backgroundColor:'orange',
+		backgroundColor:'beige',
 		color:'beige',
 		display:'flex',
-		flex:7,
+		flex:10,
 		width:'100%',
 
 	}
 }
 
 
-export default function PdfPanel(){
+export default function PdfPanel({path}){
 	return (
-		//<div style={styles.pdfStyle}></div>
-		<embed style={styles.pdfStyle} src='https://saxen.it/notes/linjalg.pdf' type='application/pdf'/>
+		<embed style={styles.pdfStyle} src={`/notes/${path.toLowerCase()}.pdf`} type='application/pdf'/>
 
 	)
 }

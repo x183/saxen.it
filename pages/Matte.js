@@ -21,7 +21,12 @@ const styles={
     display:'flex',
     alignContent:'stretch',
     flexDirection:'column',
-    height:'95vh'
+    height:'100vh',
+    width:'100vw',
+    marginLeft:'0vw',
+    marginRight:'0vw',
+    marginTop:'0vh',
+    marginBottom:'0vh'
   }
 };
 
@@ -47,14 +52,12 @@ var container;
 var containercontainer;
 export default function Home({data}) {
 
-//  json.then(
-    //console.log(json.result);
     container=ButtonContainer(data);
     containercontainer=ButtonContainerContainer(data,0);
   //  )
     return (
-      <body style={styles.Home} id='bod'>
-        <Welcome/>
+      <body style={styles.Home} >
+
         {container}
         {containercontainer}
 
