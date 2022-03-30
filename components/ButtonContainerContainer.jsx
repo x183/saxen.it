@@ -5,14 +5,14 @@ import { useState } from "react";
 const styles={
 	containerFlex:{
 		display:'flex',
-		flex:90,
+		flex:9,
 		flexDirection:'row',
 		alignContent:'stretch',
 		backgroundColor:'beige'
 	}
 }
 
-export default function ButtonContainerContainer(json,type){
+export default function ButtonContainerContainer({json,type}){
 	const [pdf,setpdf]=useState("");
 
 	const panel=PdfPanel({path:pdf});

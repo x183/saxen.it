@@ -4,7 +4,7 @@ const styles={
 	buttonBig: {
 		backgroundColor:'lightgray',
 		color:'black',
-		height:'100%',
+		height:'10vh',
 		width:'100%',
 
 	},
@@ -20,14 +20,15 @@ const styles={
 	}
 }
 
-export default function ButtonBig({text,id,amount}){
+export default function ButtonBig({text,id,amount,fun}){
 	let size=10/amount;
+	let txt=text.toLowerCase();
 	return (
-		<Link href={`/${text}`}>
-		<button style={styles.buttonBig}id={id}>
-			<p style={{fontSize: size+"vw"}}>{text}</p>
+		//<Link href={`/${txt}`}>
+		<button onClick={()=>fun(id)}style={styles.buttonBig}id={id}>
+			<p style={{fontSize: size+"vw",marginTop:"0vh"}}>{text}</p>
 		</button>
-		</Link>
+		//</Link>
 	)
 }
 

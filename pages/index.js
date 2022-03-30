@@ -5,7 +5,7 @@ import ButtonContainer from '../components/ButtonContainer'
 import ButtonContainerSmol from '../components/ButtonContainerSmol'
 import PdfPanel from '../components/PdfPanel'
 import ButtonContainerContainer from '../components/ButtonContainerContainer'
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
@@ -61,12 +61,12 @@ export default function Home({data}) {
 
   //setCourses(newData) // courses => newData
 
-
+  const [type, setType] = useState(0);
 
 //  json.then(
     //console.log(json.result);
-    container=ButtonContainer(data);
-    containercontainer=ButtonContainerContainer(data,0);
+    container=ButtonContainer({jso:data,fun:setType});
+    containercontainer=ButtonContainerContainer({json:data,type});
   //  )
     return (
       <body style={styles.Home} id='bod'>

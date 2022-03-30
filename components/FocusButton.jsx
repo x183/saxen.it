@@ -1,17 +1,18 @@
 const styles = {
-	buttonBig: {
+	focusButton: {
 		backgroundColor: 'lightgray',
 		color: 'black',
 		height: '100%',
 		width: '100%',
+		zIndex: '1'
 	}
 }
 
-export default function ButtonSmall({ text, id, fun }) {
+export default function FocusButton({ fun }) {
 	return (
-		<button onClick={() => fun(text)} style={styles.buttonBig} id={id}>
+		<button onClick={fun} style={styles.focusButton} id="no">
 			<p style={{fontSize:"1.5vw",fontWeight:"800"}}>
-				{text}
+				Full screen
 			</p>
 		</button>
 	)

@@ -16,3 +16,6 @@ export default function PdfPanel({path}){
 
 	)
 }
+
+
+//https://github.com/x183/notes/raw/main/notes/${path.toLowerCase()}.pdf
