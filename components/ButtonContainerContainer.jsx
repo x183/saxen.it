@@ -12,8 +12,8 @@ const styles={
 	}
 }
 
-export default function ButtonContainerContainer({json,type}){
-	const [pdf,setpdf]=useState("");
+export default function ButtonContainerContainer({json,type,pdf,setpdf}){
+
 
 	const panel=PdfPanel({path:pdf});
 	return (

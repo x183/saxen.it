@@ -5,7 +5,7 @@ const styles={
 		display:'flex',
 		flex:10,
 		width:'100%',
-
+		height:'100%'
 	}
 }
 

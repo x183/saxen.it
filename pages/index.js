@@ -5,6 +5,7 @@ import ButtonContainer from '../components/ButtonContainer'
 import ButtonContainerSmol from '../components/ButtonContainerSmol'
 import PdfPanel from '../components/PdfPanel'
 import ButtonContainerContainer from '../components/ButtonContainerContainer'
+import FocusButton from '../components/FocusButton'
 import React, { useState } from 'react'
 
 
@@ -23,13 +24,31 @@ const styles={
     alignContent:'stretch',
     flexDirection:'column',
     height:'100vh',
-    width:'100vw',
     marginLeft:'0vw',
     marginRight:'0vw',
     marginTop:'0vh',
     marginBottom:'0vh'
 
 
+
+  },
+  Bodbod:{
+    backgroundColor:' darkcyan',
+    height:'100vh',
+    width:'100vw',
+    marginLeft:'0vw',
+    marginRight:'0vw',
+    marginTop:'0vh',
+    marginBottom:'0vh',
+    overflow:'hidden'
+  },
+  ButBut:{
+    position:'absolute',
+    bottom:'0vh',
+    right:'0vw',
+    zIndex:'2',
+  },
+  BigThingy:{
 
   }
 };
@@ -61,18 +80,37 @@ export default function Home({data}) {
 
   //setCourses(newData) // courses => newData
 
-  const [type, setType] = useState(0);
+  const [type, setType] = useState("");
+  const [pdf,setpdf]=useState("");
+  const [z,setz]=useState(-1);
 
 //  json.then(
     //console.log(json.result);
     container=ButtonContainer({jso:data,fun:setType});
-    containercontainer=ButtonContainerContainer({json:data,type});
+    containercontainer=ButtonContainerContainer({json:data,type,pdf,setpdf});
   //  )
     return (
-      <body style={styles.Home} id='bod'>
+      <body style={styles.Bodbod}>
+      <div style={styles.Home} id='bod'>
         {container}
         {containercontainer}
 
+      </div>
+      <div style={styles.ButBut}>
+      <FocusButton fun={changePanelZ}val={z}funfun={setz}/>
+      </div>
+      <div style={{zIndex:z,width:"100vw",height:"100vh",position:"absolute",top:"0vh",left:"0vw"}}>
+        <PdfPanel path={pdf}/>
+        </div>
       </body>
     )
+}
+
+function changePanelZ(z,setz){
+  if(z==-1){
+    setz(1);
+  }
+  else{
+    setz(-1);
+  }
 }
