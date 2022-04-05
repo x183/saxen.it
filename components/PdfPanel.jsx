@@ -1,18 +1,15 @@
 const styles={
 	pdfStyle: {
-		backgroundColor:'beige',
-		color:'beige',
-		display:'flex',
+
 		flex:10,
-		width:'100%',
-		height:'100%'
+
 	}
 }
 
 
 export default function PdfPanel({path}){
 	return (
-		<embed style={styles.pdfStyle} src={`/notes/${path.toLowerCase()}.pdf`} type='application/pdf'/>
+		<embed className='Default' style={styles.pdfStyle} src={`/notes/${path.toLowerCase()}.pdf`} type='application/pdf'/>
 
 	)
 }

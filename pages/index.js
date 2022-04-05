@@ -83,10 +83,13 @@ export default function Home({data}) {
   const [type, setType] = useState("");
   const [pdf,setpdf]=useState("");
   const [z,setz]=useState(-1);
-
+  function typeChange(newType){
+    setpdf('');
+    setType(newType);
+  }
 //  json.then(
     //console.log(json.result);
-    container=ButtonContainer({jso:data,fun:setType});
+    container=ButtonContainer({jso:data,fun:typeChange});
     containercontainer=ButtonContainerContainer({json:data,type,pdf,setpdf});
   //  )
     return (

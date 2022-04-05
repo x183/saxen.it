@@ -3,11 +3,10 @@ import ButtonSmall from '../components/ButtonSmall'
 
 const styles={
 	containerSmolFlex:{
-		display:'flex',
 		flexDirection:'column',
 		flex:1.3,
 		alignContent:'stretch',
-		backgroundColor:'beige',
+
 
 	}
 
@@ -28,7 +27,7 @@ export default function ButtonContainerSmol({json,type,fun}){
 	return (<div></div>)
 	}
 	return (
-		<div style={styles.containerSmolFlex}>
+		<div className='Default'style={styles.containerSmolFlex}>
 			{elementList}
 		</div>
 	)

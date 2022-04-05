@@ -1,0 +1,17 @@
+.Button {
+	background-color: lightgray;
+	color:black;
+	height:100%;
+	width:100%;
+}
+.Button:hover{
+	background-color:rgb(255, 255, 255);
+}
+
+.Default{
+	background-color:beige;
+	color:black;
+	height:100%;
+	width:100%;
+	display: flex;
+}

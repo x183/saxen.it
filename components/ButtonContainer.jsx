@@ -2,11 +2,9 @@ import ButtonBig from '../components/ButtonBig'
 import React from 'react'
 const styles={
 	containerFlex:{
-		display:'flex',
 		flex:1,
 		flexDirection:'row',
-		alignContent:'stretch',
-		backgroundColor:'beige'
+		alignContent:'stretch'
 	}
 }
 var superCats=["MATTE","PROGRAMMERING","ANNAT"];
@@ -19,7 +17,7 @@ export default function ButtonContainer({jso,fun}){
 		elements[i]=ButtonBig({text:cat,id:superCats[i].toLowerCase(),amount:superCats.length,fun:fun});
 	}
 	return (
-		<div className='d-flex flex-row'style={styles.containerFlex}>
+		<div className='Default'style={styles.containerFlex}>
 			{elements}
 		</div>
 	)
