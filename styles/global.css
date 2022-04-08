@@ -1,17 +1,22 @@
 .Button {
-	background-color: lightgray;
+	background-color: #d2dae2;
 	color:black;
 	height:100%;
 	width:100%;
+	text-align:center;
 }
 .Button:hover{
 	background-color:rgb(255, 255, 255);
 }
+.Button:active{
+	background-color:rgb(177, 177, 177);
+}
 
 .Default{
-	background-color:beige;
+	background-color:#ffc048;
 	color:black;
 	height:100%;
 	width:100%;
 	display: flex;
+	text-align:center;
 }
