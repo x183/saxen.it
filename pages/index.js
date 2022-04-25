@@ -100,7 +100,8 @@ export default function Home({data}) {
 
       </div>
       <div style={styles.ButBut}>
-      <FocusButton fun={changePanelZ}val={z}funfun={setz}/>
+      <FocusButton fun={changePanelZ}val={''}funfun={setpdf}text={"no pdf"}/>
+      <FocusButton fun={changePanelZ}val={z}funfun={setz}text={"Fullscreen"}/>
       </div>
       <div style={{zIndex:z,width:"100vw",height:"100vh",position:"absolute",top:"0vh",left:"0vw"}}>
         <PdfPanel path={pdf}/>
