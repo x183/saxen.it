@@ -12,9 +12,10 @@ var superCats=["MATTE","PROGRAMMERING","ANNAT"];
 export default function ButtonContainer({jso,fun}){
 	const elements=[];
 	var i=0;
+	let size=10/superCats.length;
 	for(i=0;i<superCats.length;i++){
 		var cat=superCats[i];
-		elements[i]=ButtonBig({text:cat,id:superCats[i].toLowerCase(),amount:superCats.length,fun:fun});
+		elements[i]=ButtonBig({text:cat,id:superCats[i].toLowerCase(),size:size,fun:fun});
 	}
 	return (
 		<div className='Default'style={styles.containerFlex}>

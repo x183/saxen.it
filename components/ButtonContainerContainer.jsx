@@ -1,6 +1,6 @@
 import ButtonContainerSmol from "./ButtonContainerSmol";
 import PdfPanel from "./PdfPanel";
-import { useState } from "react";
+
 
 const styles={
 	containerFlex:{
@@ -20,10 +20,4 @@ export default function ButtonContainerContainer({json,type,pdf,setpdf}){
 			<PdfPanel path={pdf}/>
 		</div>
 	)
-}
-
-function buttonFun(id){
-console.log(id);
-setpdf(id+".pdf");
-
 }

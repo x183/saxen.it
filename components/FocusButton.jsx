@@ -8,9 +8,9 @@
 // 	}
 // }
 
-export default function FocusButton({fun,val,funfun,text}) {
+export default function FocusButton({val,funfun,text}) {
 	return (
-		<button className="Button FocusButton" id="no" onClick={()=>fun(val,funfun)}>
+		<button className="Button FocusButton" id="no" onClick={()=>{funfun(val)}}>
 				{text}
 		</button>
 	)

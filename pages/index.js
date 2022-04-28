@@ -17,63 +17,63 @@ import React, { useState } from 'react'
 
 
 
-const styles={
+const styles = {
   Home: {
-    backgroundColor:' darkcyan',
-    display:'flex',
-    alignContent:'stretch',
-    flexDirection:'column',
-    height:'100vh',
-    marginLeft:'0vw',
-    marginRight:'0vw',
-    marginTop:'0vh',
-    marginBottom:'0vh'
+    backgroundColor: ' darkcyan',
+    display: 'flex',
+    alignContent: 'stretch',
+    flexDirection: 'column',
+    height: '100vh',
+    marginLeft: '0vw',
+    marginRight: '0vw',
+    marginTop: '0vh',
+    marginBottom: '0vh'
 
 
 
   },
-  Bodbod:{
-    backgroundColor:' darkcyan',
-    height:'100vh',
-    width:'100vw',
-    marginLeft:'0vw',
-    marginRight:'0vw',
-    marginTop:'0vh',
-    marginBottom:'0vh',
-    overflow:'hidden'
+  Bodbod: {
+    backgroundColor: ' darkcyan',
+    height: '100vh',
+    width: '100vw',
+    marginLeft: '0vw',
+    marginRight: '0vw',
+    marginTop: '0vh',
+    marginBottom: '0vh',
+    overflow: 'hidden'
   },
-  ButBut:{
-    position:'absolute',
-    bottom:'0vh',
-    right:'0vw',
-    zIndex:'2',
+  ButBut: {
+    position: 'absolute',
+    bottom: '0vh',
+    right: '0vw',
+    zIndex: '2',
   },
-  BigThingy:{
+  BigThingy: {
 
   }
 };
 
 
-  //bod.innerHTML=render(){return({container} {containercontainer})};
+//bod.innerHTML=render(){return({container} {containercontainer})};
 
 
-  export async function getServerSideProps(){
-    const response = await fetch(process.env.SERVER);
-    const data = await response.json();
-    //console.log(data);Home
-    return { props: { data } };
+export async function getServerSideProps() {
+  const response = await fetch(process.env.SERVER);
+  const data = await response.json();
+  //console.log(data);Home
+  return { props: { data } };
 }
 
 
-const temp=[{
-	course_id:1,
-	course_name:"temp",
-	course_type:1
+const temp = [{
+  course_id: 1,
+  course_name: "temp",
+  course_type: 1
 }];
 
 let container;
 let containercontainer;
-export default function Home({data}) {
+export default function Home({ data }) {
 
   //react states och hooks
   //const [courses, setCourses] = useState(data);
@@ -81,40 +81,36 @@ export default function Home({data}) {
   //setCourses(newData) // courses => newData
 
   const [type, setType] = useState("");
-  const [pdf,setpdf]=useState("");
-  const [z,setz]=useState(-1);
-  function typeChange(newType){
+  const [pdf, setpdf] = useState("");
+  const [z, setz] = useState(-1);
+  function typeChange(newType) {
     setpdf('');
     setType(newType);
   }
-//  json.then(
-    //console.log(json.result);
-    container=ButtonContainer({jso:data,fun:typeChange});
-    containercontainer=ButtonContainerContainer({json:data,type,pdf,setpdf});
+  //  json.then(
+  //console.log(json.result);
+  //container = ButtonContainer({ jso: data, fun: typeChange });
+  //containercontainer = ButtonContainerContainer({ json: data, type, pdf, setpdf });
   //  )
-    return (
-      <body style={styles.Bodbod}>
+  return (
+    <body style={styles.Bodbod}>
+
       <div style={styles.Home} id='bod'>
-        {container}
-        {containercontainer}
-
+        <ButtonContainer jso={data}fun={typeChange}/>
+        <ButtonContainerContainer json={data}type={type}pdf={pdf}setpdf={setpdf}/>
       </div>
+
       <div style={styles.ButBut}>
-      <FocusButton fun={changePanelZ}val={''}funfun={setpdf}text={"no pdf"}/>
-      <FocusButton fun={changePanelZ}val={z}funfun={setz}text={"Fullscreen"}/>
+        {pdf && z < 0 && (
+          <FocusButton val={""} funfun={setpdf} text={"No pdf"} />)}
+        {pdf && (
+          <FocusButton val={z} funfun={(z) => { setz(-z) }} text={"Fullscreen"} />
+        )}
       </div>
-      <div style={{zIndex:z,width:"100vw",height:"100vh",position:"absolute",top:"0vh",left:"0vw"}}>
-        <PdfPanel path={pdf}/>
-        </div>
-      </body>
-    )
-}
 
-function changePanelZ(z,setz){
-  if(z==-1){
-    setz(1);
-  }
-  else{
-    setz(-1);
-  }
+      <div style={{ zIndex: z, width: "100vw", height: "100vh", position: "absolute", top: "0vh", left: "0vw" }}>
+        <PdfPanel path={pdf} />
+      </div>
+    </body>
+  )
 }
